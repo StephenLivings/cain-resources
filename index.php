@@ -1,7 +1,26 @@
 <?php
-
+echo 'Code works in php';
 include('connlocal.php');
+echo 'Code works to connlocal.pph';
 $allRecords = selectAll();
+echo 'Code works to selectall';
+function selectAll(){
+    global $conn;
+    $data = array();
+    $stmt = $conn->prepare('SELECT * FROM cain_resourceitems');
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if($result->num_rows === 0): 
+    $_SESSION['message'] = array('type'=>'danger', 'msg'=>'There are no records currently stored in the database.');
+else:
+    while ($row = $result->fetch_assoc()){
+        $data[] = $row;
+    }
+endif;
+    $stmt->close();
+    return $data;
+}
+echo 'code works after fucntion selct all';
 
 ?>
 
