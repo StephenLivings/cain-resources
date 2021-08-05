@@ -10,6 +10,7 @@ function selectAll(){
    echo 'start of dollar conn ';
     $data = array();
     $stmt = $conn->prepare('SELECT * FROM cain_resourceitems');
+    echo 'after first dollar stmt';
     $stmt->execute();
     $result = $stmt->get_result();
     echo 'start of dollar result ';
