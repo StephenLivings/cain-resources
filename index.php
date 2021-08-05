@@ -7,6 +7,7 @@ echo 'Code works to selectall';
 function selectAll(){
     echo 'start of selectall function';
    global $conn;
+   echo 'start of dollar conn ';
     $data = array();
     $stmt = $conn->prepare('SELECT * FROM cain_resourceitems');
     $stmt->execute();
