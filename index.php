@@ -3,9 +3,9 @@ echo 'Code works in php';
 include('connlocal.php');
 echo 'Code works to connlocal.pph';
 $allRecords = selectAll();
-echo 'Code works to selectall';
+echo 'Code works to selectall<p>';
 function selectAll(){
-    echo 'start of selectall function';
+    echo 'start of selectall function<p>';
     global $conn;
     $data = array();
     $stmt = $conn->prepare('SELECT * FROM cain_resourceitems');
