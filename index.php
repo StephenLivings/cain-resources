@@ -6,7 +6,7 @@ $allRecords = selectAll();
 echo 'Code works to selectall';
 function selectAll(){
     echo 'start of selectall function';
-   /* global $conn;
+   global $conn;
     $data = array();
     $stmt = $conn->prepare('SELECT * FROM cain_resourceitems');
     $stmt->execute();
@@ -19,7 +19,7 @@ else:
     }
 endif;
     $stmt->close();
-    return $data;  */
+    return $data;  
 }
 echo 'code works after fucntion selct all';
 
