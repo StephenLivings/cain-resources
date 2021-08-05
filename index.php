@@ -3,10 +3,10 @@ echo 'Code works in php';
 include('connlocal.php');
 echo 'Code works to connlocal.pph';
 $allRecords = selectAll();
-echo 'Code works to selectall\n';
+echo 'Code works to selectall';
 function selectAll(){
-    echo 'start of selectall function\n';
-    global $conn;
+    echo 'start of selectall function';
+   /* global $conn;
     $data = array();
     $stmt = $conn->prepare('SELECT * FROM cain_resourceitems');
     $stmt->execute();
@@ -19,7 +19,7 @@ else:
     }
 endif;
     $stmt->close();
-    return $data;
+    return $data;  */
 }
 echo 'code works after fucntion selct all';
 
