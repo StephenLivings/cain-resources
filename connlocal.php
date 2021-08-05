@@ -13,7 +13,7 @@ $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $c
 if($conn->connect_error){
     echo "not connected".$conn->connect_error;
 }else{
-   // echo "connection to DB found.";
+    echo "connection to DB found.";
 }
 
 ?>
