@@ -44,7 +44,7 @@ echo 'code works after fucntion selct all';
    ?>
 </head>
 <body>
-   // <?php include("theme/header.php"); ?>
+
     <div class="container fluid">
     <h1>All Records</h1>
 
