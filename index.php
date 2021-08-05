@@ -14,7 +14,7 @@ function selectAll(){
     $result = $stmt->get_result();
     echo 'start of dollar result ';
     if($result->num_rows === 0): 
-        echo '{$result}';
+        echo 'dollar result part 2';
     $_SESSION['message'] = array('type'=>'danger', 'msg'=>'There are no records currently stored in the database.');
 else:
     while ($row = $result->fetch_assoc()){
