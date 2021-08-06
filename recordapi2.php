@@ -68,10 +68,10 @@ $allinfo = json_decode($dataset, true);
 
 <?php
 
-while($row = $result2->fetch_assoc()){
+//hile($row = $result2->fetch_assoc()){
 
 
-        echo"<h2> {$row["school_name"]}</h2>";
+       // echo"<h2> {$row["school_name"]}</h2>";
        
 /*
             //SELECT type_desc FROM `school_type` INNER JOIN `school_details` ON school_type.type_id = school_details.school_type;
