@@ -8,7 +8,7 @@ echo 'Code works to connlocal.pph';
 $query = "SELECT resource_keyid,resource_title FROM cain_resourceitems";
 echo $query;
 $result=$conn->query($query);
-
+echo $result;
 
 
 ?>
