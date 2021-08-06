@@ -9,7 +9,7 @@ $dataset = file_get_contents($endpoint);
 
 $allinfo = json_decode($dataset, true);
 
-
+echo '{$allinfo}';
 
 ?>
 
