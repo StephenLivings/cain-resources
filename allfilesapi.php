@@ -76,7 +76,7 @@ $allinfo = json_decode($dataset, true);
 
 foreach($allinfo as $row){
 
-    //echo "<p>{$row['school_code']}{$row['school_name']}{$row['school_type']}";
+    echo "<p>{$row['school_code']}{$row['school_name']}{$row['school_type']}";
 
 
     //echo "<p>{$row['school_id']}</p>";
