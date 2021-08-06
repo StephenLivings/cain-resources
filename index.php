@@ -1,93 +1,30 @@
 <?php
-echo 'Code works in php';
-include('connlocal.php');
-echo 'Code works to connlocal.pph';
-$allRecords = selectAll();
-echo 'Code works to selectall';
-function selectAll(){
-    echo 'start of selectall function';
-   global $conn;
-   echo 'start of dollar conn ';
-    $data = array();
-    $stmt = $conn->prepare('SELECT * FROM cain_resourceitems');
-    echo 'after first dollar stmt';
-    $stmt->execute();
-    $result = $stmt->get_result();
-    echo 'start of dollar result ';
-    if($result->num_rows === 0): 
-        echo 'dollar result part 2';
-    $_SESSION['message'] = array('type'=>'danger', 'msg'=>'There are no records currently stored in the database.');
-else:
-    while ($row = $result->fetch_assoc()){
-        $data[] = $row;
-    }
-endif;
-    $stmt->close();
-    return $data;  
+//Get Heroku ClearDB connection information
+$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server = $cleardb_url["eu-cdbr-west-01.cleardb.com"];
+$cleardb_username = $cleardb_url["b58663ddf59ae8"];
+$cleardb_password = $cleardb_url["1077328e"];
+$cleardb_db = substr($cleardb_url["heroku_b909e35f617b419"],1);
+$active_group = 'default';
+$query_builder = TRUE;
+// Connect to DB
+$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+if($conn->connect_error){
+    echo "not connected".$conn->connect_error;
+}else{
+   // echo "connection to DB found.";
 }
-echo 'code works after fucntion selct all';
+
+$query = "INSERT INTO `heroku_b909e35f617b419`.`cain_temp` (`temp_name`) VALUES ('Michael');";
+echo $query;
+$result=$conn->query($query);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://rawgit.com/outboxcraft/beauter/master/beauter.min.css">
-
-   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=DM+Sans|Roboto:wght@100">
-
-
-    <title>All Linked Resources on The Troubles</title>
-   <?php 
-   //include('theme/header-scripts.php'); 
-   ?>
-</head>
-<body>
-
-    <div class="container fluid">
-    <h1>All Records</h1>
-
-
-
-    <table class="table datatable">
-    <div class="col m12" id="bodytext">
-    <table class="_width100">
-        <thead>
-            <tr>
-
-            <th>ID</th>
-            <th>Resource Title</th>
-</tr>
-</thead>
-
-<tbody>
-    <?php
-foreach ($allRecords as $record):
-echo '
-<tr>
-    <td>'.$record['resource_keyid'].' </td>
-    <td>'.$record['resource_title'].' </td>
-    <td class="text-right">
-    <a href="update.php?id='.$record['resource_keyid'].'">Update</a>
-    <a href="delete.php?id='.$record['resource_keyid'].'">Delete</a>
-</tr>
-    ';
-    endforeach;
-?>
-</tbody>
-</table>
-</div>
+test to see if insert works
 
 
 
 
-
-
-</body>
-</html>
 
