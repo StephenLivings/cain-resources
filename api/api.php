@@ -8,7 +8,7 @@ include("connlocal.php");
 
             // used in conjunction with structure index.php to retrieve iall information about schools
 if(isset($_GET['allfields'])){
-
+echo 'allfields found';
 $response1 =array();
 
 //$sql = "SELECT school_id, school_code,school_name, school_type, address_a, town, zip_code, phone, fax, first_land_not_eng_pc, eng_learner_pc, av_sat_reading, av_sat_writing, av_sat_maths, grades FROM school_details";
