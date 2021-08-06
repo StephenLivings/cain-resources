@@ -8,8 +8,26 @@ echo 'Code works to connlocal.pph';
 $query = "SELECT resource_keyid,resource_title FROM cain_resourceitems";
 echo $query;
 $result=$conn->query($query);
-echo $result;
 
+if(!$result){
+    echo $conn->error;
+  }else{
+  
+    while($row = $result->fetch_assoc()){
+  
+      //echo "<p>{$row['school_id']}</p>";
+      $row_id= $row['resource_keyid'];
+  
+      echo "<tr><div class=''>
+      <th>{$row["school_code"]}</th>
+                  <th>{$row["resource_keyid"]}</th>
+                  <th>{$row["resource_title"]}</th>
+          </div></tr> ";
+  
+  
+    }
+  
+  }
 
 ?>
 
