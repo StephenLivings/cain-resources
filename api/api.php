@@ -2,7 +2,7 @@
 
 header('Content-Type: application/json');
 
-include("../connlocal.php");
+include("connlocal.php");
 
 //$response = array();
 
