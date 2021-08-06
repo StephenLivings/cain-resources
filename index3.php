@@ -9,7 +9,7 @@ function selectAll(){
    global $conn;
 
     $data = array();
-    $stmt = $conn->prepare('SELECT * FROM `heroku_b909e35f617b419`.`cain_temp`');
+    $stmt = $conn->prepare('SELECT * FROM `heroku_b909e35f617b419`.`cain_resourceitems`');
   
     $stmt->execute();
     $result = $stmt->get_result();
