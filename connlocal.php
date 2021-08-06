@@ -17,4 +17,4 @@ if($conn->connect_error){
 
 ?>
 
-//Code to connect with Heroku and PHP from https://www.doabledanny.com/Deploy-PHP-And-MySQL-to-Heroku
+<!--Code to connect with Heroku and PHP from https://www.doabledanny.com/Deploy-PHP-And-MySQL-to-Heroku-->
