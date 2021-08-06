@@ -1,6 +1,6 @@
 <?php
 
-$endpoint="https://cain-resources.herokuapp.com/api/api.php?allfields";
+$endpoint="api/api.php?allfields";
 
 $dataset = file_get_contents($endpoint);
 
