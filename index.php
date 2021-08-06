@@ -1,10 +1,10 @@
 <?php
 //Get Heroku ClearDB connection information
-$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server = $cleardb_url["eu-cdbr-west-01.cleardb.com"];
-$cleardb_username = $cleardb_url["b58663ddf59ae8"];
-$cleardb_password = $cleardb_url["1077328e"];
-$cleardb_db = substr($cleardb_url["heroku_b909e35f617b419"],1);
+
+$cleardb_server = "eu-cdbr-west-01.cleardb.com";
+$cleardb_username = "b58663ddf59ae8";
+$cleardb_password = "1077328e";
+$cleardb_db = "heroku_b909e35f617b419";
 $active_group = 'default';
 $query_builder = TRUE;
 // Connect to DB
@@ -22,7 +22,7 @@ $result=$conn->query($query);
 
 ?>
 
-test to see if insert works
+<h1>test to see if insert works</h1>
 
 
 
