@@ -6,7 +6,7 @@ echo 'Code works to connlocal.pph';
 //$query = " SELECT school_id, school_code, school_name, school_type FROM school_details";
 
 $query = "SELECT resource_keyid,resource_title FROM cain_resourceitems";
-
+echo $query;
 $result=$conn->query($query);
 
 
