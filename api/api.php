@@ -6,6 +6,12 @@ include("connlocal.php");
 
 //$response = array();
 
+$endpoint="api.php?allfields";
+
+$dataset = file_get_contents($endpoint);
+
+$allinfo = json_decode($dataset, true);
+
             // used in conjunction with structure index.php to retrieve iall information about schools
 if(isset($_GET['allfields'])){
 
