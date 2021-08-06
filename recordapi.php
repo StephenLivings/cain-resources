@@ -86,12 +86,14 @@ while($row = $result2->fetch_assoc()){
             $row3 = $res3->fetch_assoc();
             $search3=$row3["town_name"];
 
+            //SELECT `sources_location` FROM `cain_resource_sources` INNER JOIN `cain_resourceitems` ON cain_resource_sources.sources_keyid = cain_resourceitems.resource_source;
             //SELECT `grade_type` FROM `school_grade` INNER JOIN `school_details` ON school_grade.id_grade = school_details.grades;
-           $sql4 = " SELECT `grade_type` FROM `school_grade` INNER JOIN `school_details` ON school_grade.id_grade = school_details.grades";
+             */
+           $sql4 = "SELECT `sources_location` FROM `cain_resource_sources` INNER JOIN `cain_resourceitems` ON cain_resource_sources.sources_keyid = cain_resourceitems.resource_source;";
            $res4 = $conn->query($sql4);
            $row4 = $res4->fetch_assoc();
-           $search4=$row4["grade_type"]; 
-      */
+           $search4=$row4["sources_location"]; 
+     
 
 
 
@@ -129,6 +131,7 @@ while($row = $result2->fetch_assoc()){
 
 <tr>
     <th>Source:</th> 
+    <th>$search4</th>
     <th>{$row["resource_source"]}</th>
 </tr> 
 
