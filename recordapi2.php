@@ -8,8 +8,8 @@ $dataset = file_get_contents($endpoint);
 
 $sql = "SELECT * FROM `heroku_b909e35f617b419`.`cain_resourceitems` WHERE resource_keyid=$arg";
 
-$result2 = $conn->query($sql);
-
+//$result2 = $conn->query($sql);
+$allinfo = json_decode($dataset, true);
 
 
 ?>
