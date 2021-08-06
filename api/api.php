@@ -2,15 +2,22 @@
 
 header('Content-Type: application/json');
 
-include("connlocal.php");
+$cleardb_server = "eu-cdbr-west-01.cleardb.com";
+$cleardb_username = "b58663ddf59ae8";
+$cleardb_password = "1077328e";
+$cleardb_db = "heroku_b909e35f617b419";
+$active_group = 'default';
+// Connect to DB
+$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
+if($conn->connect_error){
+    echo "not connected".$conn->connect_error;
+}else{
+    echo "connection to DB found.";
+}
+
 
 //$response = array();
-
-$endpoint="api.php?allfields";
-
-$dataset = file_get_contents($endpoint);
-
-$allinfo = json_decode($dataset, true);
 
             // used in conjunction with structure index.php to retrieve iall information about schools
 if(isset($_GET['allfields'])){
