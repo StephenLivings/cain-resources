@@ -1,0 +1,49 @@
+#indent {
+    padding-left: 15px;
+    padding-right:15px;
+
+}
+
+#background {
+    background-color: #fcf5cb;
+}
+
+input[type=submit] {
+    background: #FFFFFF;
+}
+
+#largertext {
+    font-size: 150%;
+}
+
+#forummenu {
+    background-color: #fcf5cb;
+}
+
+#padding {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 150%;
+    color: #fcf5cb;
+
+}
+
+#navbar {
+    a:link {
+        color: #770101;
+      }
+      /* visited link */
+      a:visited {
+        color: #F7FCC1;
+      }
+      /* mouse over link */
+      a:hover {
+        color: #FFFFFF;
+      }
+      /* selected link */
+      a:active {
+        color: #000000;
+      }  
+}
+

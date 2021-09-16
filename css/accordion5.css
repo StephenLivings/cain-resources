@@ -1,0 +1,99 @@
+body {
+    font-size: 1.8em;
+    background: #dadada;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1;
+    padding: 0em;
+  }
+  
+  .accordion {
+    font-size: 100%;
+    width: 100vw;
+    margin: 0 auto;
+    border-radius: 0px;
+  }
+  
+  .accordion-header,
+  .accordion-body {
+    background: white;
+  }
+  
+  .accordion-header {
+    /*padding: 1em 1em;*/
+    background: #3F51B5;
+    color: white;
+    cursor: pointer;
+    font-size: 100%;
+    letter-spacing: .1em;
+    transition: all .3s;
+    text-transform: none;
+  }
+  
+  .accordion__item {
+      border-bottom: 1px solid #3a4ba4;
+  }
+  
+  .accordion__item .accordion__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .accordion-header:hover {
+    background: #2D3D99;
+    position: relative;
+    z-index: 5;
+  }
+  
+  .accordion-body {
+    background: #fcfcfc;
+    color: #353535;
+    display: none;
+  }
+  
+  .accordion-body__contents {
+    /*padding: 1.5em 1.5em;*/
+    font-size: 1.5em;
+  }
+  
+  .accordion__item.active:last-child .accordion-header {
+    border-radius: none;
+  }
+  
+  .accordion:first-child > .accordion__item > .accordion-header {
+    border-bottom: 1px solid transparent;
+  }
+  
+  .accordion__item > .accordion-header:after {
+    content: "\f3d0";
+    font-family: IonIcons;
+    font-size: 1.5em;
+    float: right;
+    position: relative;
+    top: -2px;
+    transition: .3s all;
+    transform: rotate(0deg);
+  }
+  
+  .accordion__item.active > .accordion-header:after {
+    transform: rotate(-180deg);
+  }
+  
+  .accordion__item.active .accordion-header {
+    background: #2D3D99;
+  }
+  
+  .accordion__item .accordion__item .accordion-header {
+    background: #f1f1f1;
+    color: #353535;
+  }
+  
+  @media screen and (max-width: 1600px) {
+    body {
+      padding: 1em;
+    }
+    
+    .accordion {
+      width: 100%;
+    }
+  }
+
+  /*code for accordion adapted from https://codepen.io/LewisBriffa/pen/qjwqLb*/
